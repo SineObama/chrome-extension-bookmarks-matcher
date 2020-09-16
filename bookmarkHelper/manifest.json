@@ -1,0 +1,19 @@
+{
+  "name": "智能书签识别",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "浏览器收藏夹（书签）助手，智能判断网页是否已收藏。（因为直接删除了网页的查询参数，对一些单页面网站会误判。）",
+  "page_action": {
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "bookmarks",
+    "tabs"
+  ]
+}
