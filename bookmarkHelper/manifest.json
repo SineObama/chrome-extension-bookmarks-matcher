@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "manifest_version": 2,
   "description": "浏览器收藏夹（书签）助手，智能判断网页是否已收藏。（因为直接删除了网页的查询参数，对一些单页面网站会误判。）",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "page_action": {
     "default_icon": "icon.png"
   },
