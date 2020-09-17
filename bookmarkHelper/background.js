@@ -107,6 +107,32 @@ function loadBookmarksTree(nodes, parentTitles) {
     }
 }
 
+function reloadContextMenu() {
+    var targetUrlPatterns = [];
+    for (var key in bookmarkMap) {
+        if (/^.*:\/\/[^\/]*$/.test(key)) {
+            targetUrlPatterns.push(key + '/*');
+        } else {
+            targetUrlPatterns.push(key + '*');
+        }
+    }
+    chrome.contextMenus.removeAll(function () {
+        chrome.contextMenus.create({
+            id: 'bookmarkHelper-delete',
+            type: 'normal',
+            title: '已收藏',
+            contexts: ['link'],
+            // parentId: 0,
+            targetUrlPatterns: targetUrlPatterns
+        }, function () {
+            var err = chrome.extension.lastError;
+            if (err) {
+                console.info('error', err);
+            }
+        });
+    });
+}
+
 function reloadBookmarks() {
     console.info('reloadBookmarks', arguments);
     setTimeout(function () {
@@ -114,6 +140,7 @@ function reloadBookmarks() {
         chrome.bookmarks.getTree(function (tree) {
             loadBookmarksTree(tree);
             loadWindowList();
+            reloadContextMenu();
         });
     }, 0);
 }
@@ -125,4 +152,8 @@ chrome.bookmarks.onImportEnded.addListener(reloadBookmarks);
 
 document.addEventListener('DOMContentLoaded', function () {
     reloadBookmarks();
+});
+
+chrome.contextMenus.onClicked.addListener(function (ev) {
+    console.info('contextMenus.onClick', arguments);
 });
