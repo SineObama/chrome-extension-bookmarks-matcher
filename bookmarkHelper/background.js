@@ -2,6 +2,18 @@ tabs = {};
 tabIds = [];
 bookmarkMap = {};
 
+// 外部收藏数据
+bookmarkIndexMap = bookmarkIndexMap || {};
+
+// 归一化外部数据
+bookmarkIndexMapTmp = {};
+for (var key in bookmarkIndexMap) {
+    if (bookmarkIndexMap.hasOwnProperty(key)) {
+        bookmarkIndexMapTmp[normalizeUrl(key)] = bookmarkIndexMap[key];
+    }
+}
+bookmarkIndexMap = bookmarkIndexMapTmp;
+
 function brief(s, length) {
     length = length || 18;
     if (length < 5) {
@@ -29,7 +41,8 @@ function loadWindowList() {
         for (var i = 0; i < tabIds.length; i++) {
             (function (i) {
                 chrome.tabs.get(tabIds[i], function (tab) {
-                    var items = bookmarkMap[normalizeUrl(tab.url)];
+                    var normalized = normalizeUrl(tab.url);
+                    var items = bookmarkMap[normalized];
                     if (items) {
                         chrome.pageAction.show(tabIds[i]);
                         var markInfo = items.length > 1 ? '【已收藏多个！】' : '【已收藏】';
@@ -46,6 +59,10 @@ function loadWindowList() {
                             itemInfo += '/\n' + brief(item.title) + '\n';
                             title += itemInfo;
                         }
+                        chrome.pageAction.setTitle({tabId: tabIds[i], title: title});
+                    } else if (bookmarkIndexMap[normalized]) {
+                        chrome.pageAction.show(tabIds[i]);
+                        var title = '智能书签识别\n' + bookmarkIndexMap[normalized].prompt;
                         chrome.pageAction.setTitle({tabId: tabIds[i], title: title});
                     } else {
                         chrome.pageAction.hide(tabIds[i]);
