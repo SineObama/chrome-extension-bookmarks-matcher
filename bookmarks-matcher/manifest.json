@@ -1,0 +1,26 @@
+{
+  "name": "__MSG_extension_name__",
+  "default_locale": "zh_CN",
+  "homepage_url": "https://gitee.com/sine1995/chrome-extension-bookmarks-matcher",
+  "author": "SineObama <714186139@qq.com>",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "__MSG_extension_description__",
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "__MSG_show_details__",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "bookmarks",
+    "contextMenus",
+    "tabs"
+  ]
+}

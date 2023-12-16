@@ -1,0 +1,32 @@
+{
+  "extension_name": {
+    "message": "bookmarks matcher"
+  },
+  "extension_description": {
+    "message": "Show the bookmarks related to the current tab URL: 1.Match bookmarks ignoring URL parameters and tailing slash. 2.Match with the same second-level domain. 3.Prompt the quantity of the matched result, click to view details and jump. 4.Prompt using rule 1 when right click on links."
+  },
+  "show_details": {
+    "message": "Show details"
+  },
+  "bookmarked": {
+    "message": "bookmarked"
+  },
+  "tab_not_bookmarked": {
+    "message": "this tab match no bookmarks"
+  },
+  "matched_rule_1_2": {
+    "message": "this tab match bookmarks and second-level Domain"
+  },
+  "matched_rule_1": {
+    "message": "this tab match bookmarks"
+  },
+  "matched_rule_2": {
+    "message": "this tab match only second-level Domain"
+  },
+  "rule_1_result_title": {
+    "message": "bookmarks"
+  },
+  "rule_2_result_title": {
+    "message": "second-level Domain"
+  }
+}

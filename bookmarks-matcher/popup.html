@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>popup.html</title>
+	<style>
+		html {
+			min-height: 5em;
+			min-width: 20em;
+			background-color: #f7f7f7;
+		}
+
+		p {
+			/*普通文本换行显示*/
+			word-break: break-all;
+			/*地址超长时隐藏*/
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		a {
+			/*根据地址长度来撑开窗口宽度*/
+			white-space: nowrap;
+		}
+	</style>
+	<script src="popup.js"></script>
+</head>
+<body>
+<div id="popup_content">Hello!</div>
+</body>
+</html>

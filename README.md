@@ -1,12 +1,17 @@
-# bookmarkHelper 智能书签识别 （浏览器拓展插件）
+# bookmarks matcher (Chrome extension)
 
-“智能”判断当前网页是否已收藏，方便对网页进行辨别。
+Show the bookmarks related to the current tab URL: 
 
-**痛点**：一般浏览器只会识别网址完全一样的网页，而现在很多网页都会带上动态的query和hash值，导致无法简单判断。
+1. Match bookmarks ignoring URL parameters and tailing slash.
+2. Match with the same second-level domain.
+3. Prompt the quantity of the matched result, click to view details and jump.
+4. Prompt using rule 1 when right click on links.
 
-所以，目前采用直接删除了网页的query查询参数的方式，不过这样**对一些网站会造成误判**，可以与浏览器提示结合使用。
+ISSUES: 
 
-功能点有：
-- 当前网页已收藏时，拓展的图标会亮起（激活状态，否则是灰色）。
-- 右键一个网页链接时，如果已收藏，会显示一个“已收藏”的菜单（点击无效果）。
-- 鼠标悬浮在拓展图标上时显示信息（目前因为谷歌浏览器更新，可能会失效），提示网页收藏状态、位置，包括可能收藏了多个的情况。
+- some websites like single-page may be misjudged because of the first rule.
+
+**BACKGROUND**: 
+
+- Browser can prompt whether a webpage is bookmarked, but it only matches the whole URL. Nowadays, many URLs contains dynamic or random _query string_ or _fragment identifier_(hash), or an optional trailing slash. When we forget whether it is bookmarked, those differences make us difficult to judge, we can only search it. In this case, we need a convenient matcher.
+- When we even forget whether we have bookmarked a page from a website, we may need this extension. Usually we only need to look at the second-level domain, considering some website authors may use different top-level domains such as _abc.org_ and _abc.io_.

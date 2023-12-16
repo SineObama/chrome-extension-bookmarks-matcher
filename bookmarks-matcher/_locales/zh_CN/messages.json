@@ -1,0 +1,32 @@
+{
+  "extension_name": {
+    "message": "收藏何处 - bookmarks matcher"
+  },
+  "extension_description": {
+    "message": "展示与当前页签地址有关联的浏览器收藏夹内容。1.忽略网页参数、末尾斜杠后，检查是否已收藏。2.匹配收藏夹中与网站有相同二级域名的内容。3.在拓展图标中显示以上2种情况的数量，点击图标查看详情，可查看收藏内容的位置并跳转对应的链接。4.右键点击链接时，按照第一条检查是否已收藏。"
+  },
+  "show_details": {
+    "message": "显示详情"
+  },
+  "bookmarked": {
+    "message": "已收藏"
+  },
+  "tab_not_bookmarked": {
+    "message": "当前网页未收藏"
+  },
+  "matched_rule_1_2": {
+    "message": "已有书签和二级域名"
+  },
+  "matched_rule_1": {
+    "message": "已有书签"
+  },
+  "matched_rule_2": {
+    "message": "已有二级域名"
+  },
+  "rule_1_result_title": {
+    "message": "关联书签"
+  },
+  "rule_2_result_title": {
+    "message": "关联二级域名"
+  }
+}

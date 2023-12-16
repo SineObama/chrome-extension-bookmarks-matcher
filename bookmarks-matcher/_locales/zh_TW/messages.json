@@ -1,0 +1,32 @@
+{
+  "extension_name": {
+    "message": "收藏何處 - bookmarks matcher"
+  },
+  "extension_description": {
+    "message": "展示與當前頁簽地址有關聯的瀏覽器我的最愛內容。 1.忽略網頁參數、末尾斜杠後，檢查是否已收藏。 2.匹配我的最愛中與網站有相同二級功能變數名稱的內容。 3.在拓展圖標中顯示以上2種情况的數量，點擊圖標查看詳情，可查看收藏內容的位置並跳轉對應的連結。 4.右鍵點擊連結時，按照第一條檢查是否已收藏。"
+  },
+  "show_details": {
+    "message": "顯示詳情"
+  },
+  "bookmarked": {
+    "message": "已收藏"
+  },
+  "tab_not_bookmarked": {
+    "message": "當前網頁未收藏"
+  },
+  "matched_rule_1_2": {
+    "message": "已有書簽和二級功能變數名稱"
+  },
+  "matched_rule_1": {
+    "message": "已有書簽"
+  },
+  "matched_rule_2": {
+    "message": "已有二級功能變數名稱"
+  },
+  "rule_1_result_title": {
+    "message": "關聯書簽"
+  },
+  "rule_2_result_title": {
+    "message": "關聯二級功能變數名稱"
+  }
+}
